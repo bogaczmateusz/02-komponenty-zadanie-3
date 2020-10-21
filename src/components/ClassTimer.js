@@ -20,11 +20,7 @@ class ClassTimer extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <h2>This is a class-based timer, that shows, that you are here from: <span style={{color: '#f00'}}>{this.state.counter}</span> seconds.</h2>
-            </div>
-        )
+        return <h2>This is a class-based timer, that shows, that you are here from: <span style={{color: '#f00'}}>{this.state.counter}</span> seconds.</h2>;
     }
 }
 

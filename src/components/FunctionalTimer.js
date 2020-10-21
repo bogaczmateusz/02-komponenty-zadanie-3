@@ -1,21 +1,18 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function FunctionalTimer() {
     const [ counter, setCounter ] = useState(0);
 
     useEffect(() => {
-        window.setInterval(() => {
+        const interval = setInterval(() => {
             setCounter(prevScore => prevScore + 1);
         }, 1000);
+
+        // componentWillUnmount
+        return () => clearInterval(interval);
     }, []);
 
-    return (
-        <div>
-            <Fragment>
-                <h2>This is a function-based timer, that shows, that you are here for: <span style={{color: '#f00'}}>{counter}</span> seconds.</h2>
-            </Fragment>
-        </div>
-    )
+    return <h2>This is a function-based timer, that shows, that you are here for: <span style={{color: '#f00'}}>{counter}</span> seconds.</h2>
 }
 
 export default FunctionalTimer;
